@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Damian Soriano <ds@ingadhoc.com>
+MAINTAINER Renzo Meister <rm@jamotion.ch>
 
 RUN apt-get update && \
     apt-get install -y --force-yes --no-install-recommends libreoffice-core libreoffice-l10n-es python3-uno git python3-pip default-jre supervisor
