@@ -12,4 +12,4 @@ RUN pip3 install jsonrpc2 daemonize
 
 #CMD ["sudo", "/usr/bin/soffice", "--nologo", "--nofirststartwizard", "--norestore", "--invisible", "--headless", "--accept='socket,host=localhost,port=8100,tcpNoDelay=1;urp;'"]
 
-CMD ["/opt/aeroo_docs/aeroo-docs start"]
+CMD ["/opt/aeroo_docs/aeroo-docs", "start"]
