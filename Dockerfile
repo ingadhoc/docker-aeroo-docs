@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
-MAINTAINER Damian Soriano <ds@ingadhoc.com>
+MAINTAINER Juan Jose Scarafia <jjs@adhoc.com.ar>
 
-ENV REFRESHED_AT 2014-09-17
+ENV REFRESHED_AT 2015-05-02
 
 RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
