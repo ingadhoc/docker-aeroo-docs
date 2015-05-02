@@ -3,13 +3,17 @@ MAINTAINER Damian Soriano <ds@ingadhoc.com>
 
 ENV REFRESHED_AT 2014-09-17
 
-RUN apt-get update
-RUN apt-get install -y --force-yes --no-install-recommends libreoffice-core libreoffice-l10n-es python3-uno git python3-pip default-jre
+RUN DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    apt-get install -y git python3-uno libreoffice-writer libreoffice-calc python3-pip xvfb supervisor openjdk-7-jre && \
+    apt-get clean
+
+RUN pip3 install jsonrpc2
+RUN pip3 install daemonize
 
 RUN git clone https://github.com/aeroo/aeroo_docs.git /opt/aeroo_docs
 
-RUN pip3 install jsonrpc2 daemonize
+EXPOSE 8989
 
-#CMD ["sudo", "/usr/bin/soffice", "--nologo", "--nofirststartwizard", "--norestore", "--invisible", "--headless", "--accept='socket,host=localhost,port=8100,tcpNoDelay=1;urp;'"]
-
-CMD ["/opt/aeroo_docs/aeroo-docs start"]
+ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+CMD supervisord -c /etc/supervisor/conf.d/supervisord.conf
