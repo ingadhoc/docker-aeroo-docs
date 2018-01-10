@@ -15,7 +15,7 @@ RUN curl -s https://raw.githubusercontent.com/hotice/webupd8/master/install-goog
 COPY ./resources/segoeui/ /usr/share/fonts/truetype/
 
 # Limpieza
-RUN apt-get cleanqqqqqqqqqq
+RUN apt-get clean
 
 RUN pip3 install jsonrpc2
 RUN pip3 install daemonize
