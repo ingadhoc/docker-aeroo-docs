@@ -8,10 +8,10 @@ RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y git python3-uno libreoffice-writer libreoffice-calc python3-pip xvfb supervisor openjdk-7-jre
 
 # agregamos fuentes solicitadas por ivan
-RUN apt-get install  -y msttcorefonts curl
+RUN apt-get install -y msttcorefonts curl
 RUN curl -s https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts | bash
-# este por ahora no es necesario para ivan pero igual lo agregamos
-RUN apt-get install ubuntustudio-font-meta
+# este por ahora no es necesario y ademas pesa muchísimo
+#RUN apt-get install -y ubuntustudio-font-meta
 
 # Limpieza
 RUN apt-get clean
