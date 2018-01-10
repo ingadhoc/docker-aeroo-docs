@@ -12,7 +12,7 @@ RUN apt-get install -y msttcorefonts curl fonts-cantarell ttf-mscorefonts-instal
 RUN curl -s https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts | bash
 # este por ahora no es necesario y ademas pesa muchísimo
 #RUN apt-get install -y ubuntustudio-font-meta
-COPY ./resources/segoeui/ /usr/share/fonts/truetype/
+COPY ./resources/segoeui/ /usr/share/fonts/truetype/segoeui/
 
 # Limpieza
 RUN apt-get clean
