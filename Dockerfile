@@ -5,13 +5,23 @@ ENV REFRESHED_AT 2015-05-02
 
 RUN DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
-    apt-get install -y git python3-uno libreoffice-writer libreoffice-calc python3-pip xvfb supervisor openjdk-7-jre && \
-    apt-get clean
+    apt-get install -y git python3-uno libreoffice-writer libreoffice-calc python3-pip xvfb supervisor openjdk-7-jre
+
+# agregamos fuentes solicitadas por ivan
+RUN apt-get install  -y msttcorefonts curl
+RUN curl -s https://raw.githubusercontent.com/hotice/webupd8/master/install-google-fonts | bash
+# este por ahora no es necesario para ivan pero igual lo agregamos
+RUN apt-get install ubuntustudio-font-meta
+
+# Limpieza
+RUN apt-get clean
 
 RUN pip3 install jsonrpc2
 RUN pip3 install daemonize
 
 RUN git clone https://github.com/aeroo/aeroo_docs.git /opt/aeroo_docs
+
+
 
 EXPOSE 8989
 
