@@ -16,4 +16,4 @@ RUN git clone https://github.com/aeroo/aeroo_docs.git /opt/aeroo_docs
 
 EXPOSE 8989
 
-CMD python3 /opt/aeroo_docs/aeroo-docs start -w libreoffice -s 8100 -n -p 8989 -i 0.0.0.0
+CMD python3 /opt/aeroo_docs/aeroo-docs start -w adhoc-aeroo-docs-libreoffice -s 8100 -n -p 8989 -i 0.0.0.0
