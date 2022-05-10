@@ -20,4 +20,4 @@ RUN apt-get clean
 
 EXPOSE 8100
 
-CMD /usr/bin/soffice --headless --accept=socket,host=localhost,port=8100;urp;
+CMD /usr/bin/soffice --norestore --nologo --norestore --nofirststartwizard --accept="socket,host=0,port=8100;urp;"
